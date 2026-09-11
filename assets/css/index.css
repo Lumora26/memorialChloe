@@ -1,0 +1,310 @@
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS DA HOME (index.html) - LUMORA DIGITAL
+   ========================================================================== */
+
+/* Fundo Geral com Degradê Mais Encorpado para Melhor Contraste */
+body.mobile-only-body {
+  background: linear-gradient(180deg, #b8dcfa 0%, #d8ecff 35%, #c5e3fc 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+
+.app-viewport {
+  width: 100%;
+  max-width: 430px; /* Largura ideal para smartphones */
+  min-height: 100vh;
+  padding: 24px 20px 30px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Ilustrações de Fundo (Sol e Coração) */
+.bg-decorations .decor-sun {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 2.2rem;
+  opacity: 0.95;
+  filter: drop-shadow(0 3px 8px rgba(255, 190, 0, 0.4));
+}
+
+.bg-decorations .decor-heart-top {
+  position: absolute;
+  top: 65px;
+  left: 24px;
+  font-size: 1.5rem;
+  color: #1a5ca3;
+  transform: rotate(-15deg);
+}
+
+/* --- CABEÇALHO DO PERFIL --- */
+.hero-header {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+/* Moldura Arredondada da Foto */
+.avatar-container {
+  position: relative;
+  width: 155px;
+  height: 155px;
+  margin: 0 auto 16px auto;
+}
+
+.avatar-blob {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(24, 76, 130, 0.18);
+  background-color: #fff;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-heart-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 12px;
+  background-color: #ffffff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  border: 1px solid #c0dfff;
+}
+
+/* Nome do Aniversariante / Pessoa */
+.profile-name {
+  font-family: var(--font-title);
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #12447a; /* Mais contraste para leitura fácil */
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.profile-name .name-heart {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #165292;
+}
+
+/* Subtítulo / Frase */
+.profile-tagline {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #35506c;
+  line-height: 1.35;
+  margin-bottom: 14px;
+}
+
+.blue-bullet {
+  color: #1a5ca3;
+  font-size: 0.8rem;
+}
+
+/* Faixa de Datas */
+.dates-row {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #12447a;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 6px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.date-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* --- CARDS DE NAVEGAÇÃO COM INTERAÇÃO MELHORADA --- */
+.cards-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.menu-card {
+  display: flex;
+  align-items: center;
+  padding: 15px 18px;
+  border-radius: 24px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(18, 68, 122, 0.08);
+  position: relative;
+  overflow: hidden;
+  /* Transição suave para o efeito de aumentar ao passar o dedo/mouse */
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease, filter 0.22s ease;
+  will-change: transform;
+}
+
+/* Efeito de aumento (Hover no Desktop / Touch no Mobile) */
+.menu-card:hover,
+.menu-card:focus {
+  transform: translateY(-3px) scale(1.025);
+  box-shadow: 0 12px 28px rgba(18, 68, 122, 0.15);
+  filter: brightness(1.02);
+}
+
+/* Animação instantânea ao pressionar com o dedo */
+.menu-card:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 12px rgba(18, 68, 122, 0.1);
+}
+
+/* Cores vibrantes dos Cards com mais contraste */
+.card-blue {
+  background-color: #d2e8fc;
+  border: 1px solid #bce0ff;
+}
+
+.card-yellow {
+  background-color: #ffeabf;
+  border: 1px solid #ffd894;
+}
+
+.card-blue-light {
+  background-color: #dbf0ff;
+  border: 1px solid #c7e6ff;
+}
+
+.card-purple {
+  background-color: #e2d2ff;
+  border: 1px solid #d2bcff;
+}
+
+/* Ícone do Card */
+.card-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  margin-right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.menu-card:hover .card-icon-wrapper {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.card-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Textos do Card */
+.card-text {
+  flex: 1;
+}
+
+.card-text h2 {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #12447a;
+  margin: 0 0 2px 0;
+}
+
+.card-purple .card-text h2 {
+  color: #4a3378;
+}
+
+.card-text p {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #435b73;
+  margin: 0;
+  line-height: 1.25;
+}
+
+/* Botão Circular com Seta (Chevron) */
+.card-chevron {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.menu-card:hover .card-chevron {
+  transform: translateX(3px);
+  background-color: #f4f9ff;
+}
+
+/* --- RODAPÉ COM MARCA LUMORA --- */
+.home-footer {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.footer-quote {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #1e4570;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.footer-doodles {
+  font-size: 0.85rem;
+  color: #1a5ca3;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+/* Assinatura da Empresa Lumora */
+.lumora-brand-footer {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #587596;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.85;
+}
+
+.lumora-brand-footer span {
+  color: #12447a;
+  font-weight: 800;
+}

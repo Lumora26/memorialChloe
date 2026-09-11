@@ -1,0 +1,290 @@
+/* ==========================================================================
+   MURAL DE RECADOS LUMORA - DESIGN FOFO & FEED EM TEMPO REAL
+   ========================================================================== */
+
+:root {
+  --font-handwritten: 'Short Stack', cursive, sans-serif;
+  --font-title: 'Fredoka', cursive, sans-serif;
+  --font-body: 'Quicksand', sans-serif;
+}
+
+.mural-viewport {
+  padding: 20px 16px 40px 16px;
+}
+
+/* Topo / Header */
+.mural-top-nav {
+  margin-bottom: 20px;
+}
+
+.mural-hero-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.55);
+  padding: 16px;
+  border-radius: 26px;
+  backdrop-filter: blur(6px);
+  border: 1.5px solid #d2e6ff;
+}
+
+.mural-hero-text h1 {
+  font-family: var(--font-title);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #12447a;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.mural-hero-text p {
+  font-family: var(--font-handwritten);
+  font-size: 0.95rem;
+  color: #38536f;
+  line-height: 1.35;
+}
+
+.mural-main-avatar {
+  width: 90px;
+  height: 90px;
+  min-width: 90px;
+  position: relative;
+}
+
+.avatar-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- FORMULÁRIO LUMORA DE ENVIAR MENSAGEM --- */
+.form-card {
+  border-radius: 26px;
+  padding: 18px 16px;
+  box-shadow: 0 8px 22px rgba(18, 68, 122, 0.08);
+  margin-bottom: 24px;
+}
+
+.form-card.bg-blue {
+  background-color: #dbeeff;
+  border: 1.5px solid #c4e0ff;
+}
+
+.form-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.form-title h2 {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #12447a;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.input-group input[type="text"],
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 16px;
+  border: 1.5px solid #c0deff;
+  background-color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #12447a;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.text-area-wrapper {
+  position: relative;
+}
+
+.text-area-wrapper textarea {
+  font-family: var(--font-handwritten);
+  font-size: 0.98rem;
+  padding-bottom: 24px;
+  resize: none;
+}
+
+.char-counter {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-family: var(--font-handwritten);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #728da8;
+}
+
+/* Linha dos Botões do Form */
+.form-bottom-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.btn-photo-attach {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1.5px dashed #1a5ca3;
+  color: #12447a;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 11px 8px;
+  border-radius: 16px;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-enviar-msg {
+  background-color: #e2a838; /* Cor amarelada/dourada inspirada na referência */
+  color: #ffffff;
+  border: none;
+  border-radius: 16px;
+  padding: 12px 16px;
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(226, 168, 56, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.btn-enviar-msg:active {
+  transform: scale(0.96);
+}
+
+/* --- FEED DE RECADOS (UM ABAIXO DO OUTRO) --- */
+.feed-header h2 {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #12447a;
+  margin-bottom: 14px;
+}
+
+.feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.loading-state {
+  text-align: center;
+  font-family: var(--font-handwritten);
+  font-size: 1rem;
+  color: #4a6785;
+  padding: 20px 0;
+}
+
+/* Card Individual de Recado */
+.recado-card {
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(18, 68, 122, 0.06);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* Alternância Pastel de Cores */
+.recado-card.card-blue { background-color: #dbeeff; border: 1.5px solid #c4e0ff; }
+.recado-card.card-yellow { background-color: #ffeed0; border: 1.5px solid #ffd899; }
+.recado-card.card-purple { background-color: #e8ddff; border: 1.5px solid #d4c0ff; }
+
+.recado-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.user-avatar-circle {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #12447a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.recado-user-details h3 {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #12447a;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.badge-vinculo {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  background-color: #ffffff;
+  color: #12447a;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.recado-time {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #5d7894;
+  margin-left: auto;
+}
+
+.recado-text {
+  font-family: var(--font-handwritten);
+  font-size: 1.05rem;
+  color: #243e58;
+  line-height: 1.45;
+}
+
+.recado-media {
+  margin-top: 10px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 3px solid #ffffff;
+  cursor: pointer;
+}
+
+.recado-media img {
+  width: 100%;
+  max-height: 230px;
+  object-fit: cover;
+  display: block;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Retrospectiva da Chloe - Lumora</title>
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@600;700&family=Short+Stack&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./../css/variables.css" />
+  <link rel="stylesheet" href="./../css/global.css" />
+  <link rel="stylesheet" href="./../css/components.css" />
+  <link rel="stylesheet" href="./../css/retrospectiva.css" />
+</head>
+<body class="mobile-only-body">
+
+  <main class="app-viewport retro-viewport">
+    
+    <!-- Enfeites de Fundo -->
+    <div class="bg-decorations">
+      <span class="decor-sun">☀️</span>
+      <span class="decor-cloud-left">☁️</span>
+    </div>
+
+    <!-- Topo da Retrospectiva -->
+    <header class="retro-top-nav">
+      <a href="./../../index.html"btn-voltar">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#1a5ca3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Voltar
+      </a>
+
+      <div class="retro-hero-box">
+        <div class="retro-hero-icon">🎬</div>
+        <div>
+          <h1>Retrospectiva <span class="heart-blue">♡</span></h1>
+          <p>Assista ao vídeo especial com os melhores momentos da Chloe!</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- ESTADO 1: TELA BLOQUEADA COM CONTAGEM REGRESSIVA (Antes do dia 13/09/2026) -->
+    <section class="locked-container bg-yellow" id="locked-state">
+      <div class="lock-icon-wrapper">🔒</div>
+      <h2>Momento Surpresa!</h2>
+      <p class="lock-desc">
+        A retrospectiva em vídeo da Chloe será liberada assim que passar na festa! Fique atento ao telão. ✨
+      </p>
+
+      <!-- Contador de Tempo com Dias, Horas, Minutos e Segundos -->
+      <div class="countdown-timer">
+        <div class="time-box">
+          <span id="days">00</span>
+          <small>Dias</small>
+        </div>
+        <span class="colon">:</span>
+        <div class="time-box">
+          <span id="hours">00</span>
+          <small>Horas</small>
+        </div>
+        <span class="colon">:</span>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <small>Minutos</small>
+        </div>
+        <span class="colon">:</span>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>Seg</small>
+        </div>
+      </div>
+
+      <p class="lock-subtext">Liberando no dia 13/09/2026...</p>
+    </section>
+
+    <!-- ESTADO 2: TELA LIBERADA COM VÍDEO DO YOUTUBE (Após o horário do dia 13/09/2026) -->
+    <section class="unlocked-container" id="unlocked-state" style="display: none;">
+      
+      <div class="video-card bg-blue">
+        <div class="video-wrapper">
+          <!-- Subsitua o link do YouTube abaixo pelo vídeo do seu canal -->
+          <iframe 
+            id="youtube-player"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" 
+            title="Retrospectiva da Chloe" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-info">
+          <h2>🍿 Filme da Nossa Pequena</h2>
+          <p>Reviva cada sorriso, lágrima de alegria e momentos inesquecíveis que preparamos com tanto carinho!</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Rodapé Lumora -->
+    <footer class="home-footer" style="margin-top: 30px;">
+      <p class="lumora-brand-footer">
+        <span>Lumora</span> — Memorial Digital
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- Script da Lógica de Horário para 13/09/2026 e Desbloqueio Instantâneo -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // ⚙️ DATA DA FESTA: 13 de Setembro de 2026 às 20:30
+      // Nota: No JS, Ano: 2026 | Mês: 8 (Setembro = mês 8, pois vai de 0 a 11) | Dia: 13 | Hora: 20 | Min: 30
+      const targetDate = new Date(2026, 8, 13, 20, 30, 0).getTime();
+
+      const lockedState = document.getElementById('locked-state');
+      const unlockedState = document.getElementById('unlocked-state');
+
+      const elDays = document.getElementById('days');
+      const elHours = document.getElementById('hours');
+      const elMinutes = document.getElementById('minutes');
+      const elSeconds = document.getElementById('seconds');
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+
+        // Se o tempo acabou (ou se já passou do dia 13/09/2026 20:30):
+        // Esconde o cadeado e mostra o Vídeo do YouTube imediatamente!
+        if (difference <= 0) {
+          lockedState.style.display = 'none';
+          unlockedState.style.display = 'block';
+          clearInterval(timerInterval);
+          return;
+        }
+
+        // Caso ainda falte tempo, calcula Dias, Horas, Minutos e Segundos
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        if (elDays) elDays.textContent = String(days).padStart(2, '0');
+        if (elHours) elHours.textContent = String(hours).padStart(2, '0');
+        if (elMinutes) elMinutes.textContent = String(minutes).padStart(2, '0');
+        if (elSeconds) elSeconds.textContent = String(seconds).padStart(2, '0');
+      }
+
+      // Executa a checagem imediatamente e atualiza a cada 1 segundo
+      updateTimer();
+      const timerInterval = setInterval(updateTimer, 1000);
+    });
+  </script>
+
+</body>
+</html>

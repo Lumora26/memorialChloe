@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Galeria de Fotos da Chloe - Lumora</title>
+
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@600;700&family=Short+Stack&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./../css/variables.css" />
+  <link rel="stylesheet" href="./../css/components.css" />
+  <link rel="stylesheet" href="./../css/global.css" />
+  <link rel="stylesheet" href="./../css/galeria.css" />
+</head>
+<body class="mobile-only-body">
+
+  <main class="app-viewport galeria-viewport">
+    
+    <!-- Enfeites de Fundo -->
+    <div class="bg-decorations">
+      <span class="decor-sun">☀️</span>
+      <span class="decor-cloud-left">☁️</span>
+    </div>
+
+    <!-- Topo da Galeria -->
+    <header class="galeria-top-nav">
+      <a href="./../../index.html" class="btn-voltar">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#1a5ca3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Voltar
+      </a>
+
+      <div class="galeria-hero-box">
+        <div class="galeria-hero-icon">🖼️</div>
+        <div>
+          <h1>Galeria de Fotos <span class="heart-blue">♡</span></h1>
+          <p>Confira os momentos mais fofos e inesquecíveis da Chloe!</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- FEED DE FOTOS EM GRID DE 2 EM 2 (DUAS COLUNAS) -->
+    <section class="photos-grid-container">
+      
+      <!-- Foto 1 -->
+      <div class="photo-card-item">
+        <div class="photo-frame">
+          <img src="https://cdn.alboompro.com/5eea1bb84207f40001dca4b1_67cac961308c960001f39ea4/original_size/foto-de-nenem.jpg?v=1" alt="Seu primeiro sorriso" />
+        </div>
+        <span class="photo-caption">Primeiro Sorriso 😁</span>
+      </div>
+
+      <!-- Foto 2 -->
+      <div class="photo-card-item">
+        <div class="photo-frame">
+          <img src="https://cdn.alboompro.com/5eea1bb84207f40001dca4b1_67cac961308c960001f39ea4/original_size/foto-de-nenem.jpg?v=1" alt="Passeio no parque" />
+        </div>
+        <span class="photo-caption">Dia no Parque 🌳</span>
+      </div>
+
+      <!-- Foto 3 -->
+      <div class="photo-card-item">
+        <div class="photo-frame">
+          <img src="https://cdn.alboompro.com/5eea1bb84207f40001dca4b1_67cac961308c960001f39ea4/original_size/foto-de-nenem.jpg?v=1" alt="Hora da brincadeira" />
+        </div>
+        <span class="photo-caption">Brincadeiras 🧸</span>
+      </div>
+
+      <!-- Foto 4 -->
+      <div class="photo-card-item">
+        <div class="photo-frame">
+          <img src="https://cdn.alboompro.com/5eea1bb84207f40001dca4b1_67cac961308c960001f39ea4/original_size/foto-de-nenem.jpg?v=1" alt="Aniversário de 2 anos" />
+        </div>
+        <span class="photo-caption">2 Aninhos! 🎈</span>
+      </div>
+
+      <!-- Foto 5 -->
+      <div class="photo-card-item">
+        <div class="photo-frame">
+          <img src="https://cdn.alboompro.com/5eea1bb84207f40001dca4b1_67cac961308c960001f39ea4/original_size/foto-de-nenem.jpg?v=1" alt="Com a família" />
+        </div>
+        <span class="photo-caption">Com a Família 💙</span>
+      </div>
+
+      <!-- Foto 6 -->
+      <div class="photo-card-item">
+        <div class="photo-frame">
+          <img src="https://cdn.alboompro.com/5eea1bb84207f40001dca4b1_67cac961308c960001f39ea4/original_size/foto-de-nenem.jpg?v=1" alt="Com os amigos" />
+        </div>
+        <span class="photo-caption">Amiguinhos ⭐</span>
+      </div>
+
+      <!-- Foto 7 -->
+      <div class="photo-card-item">
+        <div class="photo-frame">
+          <img src="https://cdn.alboompro.com/5eea1bb84207f40001dca4b1_67cac961308c960001f39ea4/original_size/foto-de-nenem.jpg?v=1" alt="Com os pets" />
+        </div>
+        <span class="photo-caption">Com os Pets 🐾</span>
+      </div>
+
+      <!-- Foto 8 -->
+      <div class="photo-card-item">
+        <div class="photo-frame">
+          <img src="https://cdn.alboompro.com/5eea1bb84207f40001dca4b1_67cac961308c960001f39ea4/original_size/foto-de-nenem.jpg?v=1" alt="Bagunça gostosa" />
+        </div>
+        <span class="photo-caption">Bagunça Gostosa 🎉</span>
+      </div>
+
+    </section>
+
+    <!-- Rodapé Lumora -->
+    <footer class="home-footer" style="margin-top: 30px;">
+      <p class="lumora-brand-footer">
+        <span>Lumora</span> — Memorial Digital
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- LIGHTBOX / MODAL DE FOTO EM TELA CHEIA -->
+  <div class="lumora-lightbox" id="lightbox-modal">
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="lightbox-close" aria-label="Fechar">&times;</button>
+      <img src="" alt="Imagem ampliada" class="lightbox-img" id="lightbox-img" />
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- SCRIPT DE NAVEGAÇÃO E LIGHTBOX -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('lightbox-modal');
+      const modalImg = document.getElementById('lightbox-img');
+      const modalCaption = document.getElementById('lightbox-caption');
+      const closeBtn = document.getElementById('lightbox-close');
+
+      const allPhotos = document.querySelectorAll('.photo-card-item');
+
+      allPhotos.forEach(card => {
+        const img = card.querySelector('img');
+        const caption = card.querySelector('.photo-caption');
+
+        if (img) {
+          card.addEventListener('click', () => {
+            modalImg.src = img.src;
+            modalCaption.textContent = caption ? caption.textContent : img.alt;
+            modal.classList.add('active');
+          });
+        }
+      });
+
+      const closeModal = () => modal.classList.remove('active');
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+    });
+  </script>
+
+</body>
+</html>

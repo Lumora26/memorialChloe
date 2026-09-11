@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@600;700&family=Short+Stack&display=swap');
+
+:root {
+  --font-handwritten: 'Short Stack', cursive, sans-serif;
+  --font-title: 'Fredoka', cursive, sans-serif;
+  --font-body: 'Quicksand', sans-serif;
+  --primary-blue: #12447a;
+  --bg-sky: #d8ecff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.mobile-only-body {
+  background: linear-gradient(180deg, #b8dcfa 0%, #d8ecff 35%, #c5e3fc 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+}
+
+.app-viewport {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  padding: 20px 16px 30px 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Botão Voltar Padronizado */
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  color: var(--primary-blue);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  margin-bottom: 14px;
+}
+
+/* Lightbox Global */
+.lumora-lightbox {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background-color: rgba(18, 38, 58, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lumora-lightbox.active {
+  opacity: 1; pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative; max-width: 90%; max-height: 85vh;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%; max-height: 75vh; object-fit: contain;
+  border-radius: 16px; border: 4px solid #ffffff;
+}
+
+.lightbox-close-btn {
+  position: absolute; top: -18px; right: -18px;
+  width: 40px; height: 40px; background-color: #ffffff;
+  color: var(--primary-blue); border: none; border-radius: 50%;
+  font-size: 1.3rem; font-weight: bold; cursor: pointer;
+}
+
+/* Rodapé Marca Lumora */
+.home-footer {
+  text-align: center; margin-top: auto; padding-top: 16px;
+}
+.lumora-brand-footer {
+  font-size: 0.75rem; font-weight: 700; color: #587596;
+  text-transform: uppercase; letter-spacing: 0.8px;
+}
+.lumora-brand-footer span { color: var(--primary-blue); font-weight: 800; }

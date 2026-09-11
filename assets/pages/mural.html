@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Mural de Recados da Chloe - Lumora</title>
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@600;700&family=Short+Stack&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./../css/variables.css" />
+  <link rel="stylesheet" href="./../css/global.css" />
+  <link rel="stylesheet" href="./../css/mural.css" />
+</head>
+<body class="mobile-only-body">
+
+  <main class="app-viewport mural-viewport">
+    
+    <!-- Enfeites de Fundo -->
+    <div class="bg-decorations">
+      <span class="decor-sun">☀️</span>
+      <span class="decor-cloud-left">☁️</span>
+    </div>
+
+    <!-- Topo do Mural -->
+    <header class="mural-top-nav">
+      <a href="./../../index.html" class="btn-voltar">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#1a5ca3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Voltar
+      </a>
+
+      <div class="mural-hero-flex">
+        <div class="mural-hero-text">
+          <h1>Mural de<br>Recados <span class="heart-blue">♡</span></h1>
+          <p>Deixe sua mensagem, uma foto ou um carinho especial para a Chloe!</p>
+        </div>
+
+        <div class="mural-main-avatar">
+          <div class="avatar-frame">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXwuV_SHevAdrW2KB4Cn_8Dd-qId3MBcP7osCAytN7og&s=10" alt="Chloe" class="avatar-img" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- FORMULÁRIO ESTILIZADO LUMORA (COM REGRAS DE 120 CARACTERES) -->
+    <section class="form-card bg-blue">
+      <div class="form-title">
+        <span class="icon">✏️</span>
+        <h2>Deixe sua mensagem</h2>
+      </div>
+
+      <form id="mural-firestore-form">
+        
+        <div class="input-group">
+          <input type="text" id="input-nome" placeholder="Seu nome" required />
+        </div>
+
+        <div class="input-group">
+          <select id="input-vinculo" required>
+            <option value="" disabled selected>Grau de Parentesco / Relação</option>
+            <option value="Família">Família 💙</option>
+            <option value="Amigo(a)">Amigo(a) da família ⭐</option>
+            <option value="Tio/Tia">Tio / Tia 💖</option>
+            <option value="Padrinho">Padrinho / Madrinha 🌟</option>
+            <option value="Outro">Outro amoroso ♡</option>
+          </select>
+        </div>
+
+        <div class="input-group text-area-wrapper">
+          <textarea id="input-mensagem" maxlength="120" rows="3" placeholder="Sua mensagem carinhosa..." required></textarea>
+          <span class="char-counter"><span id="char-count">0</span>/120</span>
+        </div>
+
+        <div class="form-bottom-row">
+          <label for="input-foto" class="btn-photo-attach">
+            📷 <span id="photo-label">Adicionar foto</span>
+          </label>
+          <input type="file" id="input-foto" accept="image/*" style="display: none;" />
+
+          <button type="submit" class="btn-enviar-msg">
+            ENVIAR MENSAGEM &rarr;
+          </button>
+        </div>
+
+      </form>
+    </section>
+
+    <!-- FEED EM TEMPO REAL (CARDS EXIBIDOS UM ABAIXO DO OUTRO) -->
+    <section class="feed-container">
+      <div class="feed-header">
+        <h2>Recados do Coração 💬</h2>
+      </div>
+
+      <!-- O JavaScript insere os recados salvos do Firebase Firestore aqui dentro -->
+      <div class="feed-list" id="mural-feed">
+        <div class="loading-state">Carregando recados especiais... ✨</div>
+      </div>
+    </section>
+
+    <!-- Rodapé Lumora -->
+    <footer class="home-footer" style="margin-top: 30px;">
+      <p class="lumora-brand-footer">
+        <span>Lumora</span> — Memorial Digital
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- Lightbox para Ampliar Fotos dos Recados -->
+  <div class="lumora-lightbox" id="lightbox-modal">
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="lightbox-close" aria-label="Fechar">&times;</button>
+      <img src="" alt="Imagem ampliada" class="lightbox-img" id="lightbox-img" />
+    </div>
+  </div>
+
+  <!-- Script Modularizado do Firebase -->
+  <script type="module" src="./../js/modules/mural.js"></script>
+
+</body>
+</html>
