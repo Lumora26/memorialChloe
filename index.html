@@ -1,124 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Lumora - Memorial Digital da Chloe</title>
-  
-  <!-- Fontes Google -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memórias de Amor - Chloe</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/variables.css" />
-  <link rel="stylesheet" href="assets/css/global.css" />
-  <link rel="stylesheet" href="assets/css/components.css" />
-  <link rel="stylesheet" href="assets/css/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="mobile-only-body">
+<body>
 
-  <main class="app-viewport">
+  <main class="mobile-container">
     
-    <!-- Enfeites de Fundo -->
-    <div class="bg-decorations">
-      <span class="decor-sun">☀️</span>
-      <span class="decor-heart-top">💙</span>
-    </div>
+    <!-- Topo da página usando o artefato completo como Background -->
+    <section class="hero-card">
+      <!-- Imagem de Referência Integrada -->
+      <img src="./assets/img/referencia.png" alt="Chloe 2 Aninhos" class="hero-bg-image">
 
-    <!-- Cabeçalho Chloe -->
-    <header class="hero-header">
-      <div class="avatar-container">
-        <div class="avatar-blob">
-          <img src="assets/img/perfil/chloe-avatar.jpg" alt="Chloe" class="avatar-img" />
-        </div>
-        <div class="avatar-heart-badge">💙</div>
+      <!-- Botão posicionado exatamente sobre a área correta (sem tapar a criança) -->
+      <div class="hero-action-overlay">
+        <a href="./assets/pages/memorial.html" id="btnUnlock" class="btn-memorial">
+          <span class="icon">📅</span> ACESSAR MEMORIAL
+        </a>
       </div>
-
-      <h1 class="profile-name">Chloe <span class="name-heart">♡</span></h1>
-      
-      <p class="profile-tagline">
-        Pequena no tamanho,<br>gigante no amor. <span class="blue-bullet">♥</span>
-      </p>
-
-      <div class="dates-row">
-        <span class="date-item">★ 15/08/2023</span>
-      </div>
-    </header>
-
-    <!-- Menu de Navegação -->
-    <nav class="cards-menu">
-      
-      <!-- Card Biografia -->
-      <a href="./assets/pages/biografia.html" class="menu-card card-blue">
-        <div class="card-icon-wrapper">
-          <img src="assets/img/icon-biografia.svg" alt="Biografia" class="card-icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%231a5ca3\'><path d=\'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-1.4 3.12-2.17 7-2.17s7 .77 7 2.17V19z\'/></svg>'" />
-        </div>
-        <div class="card-text">
-          <h2>Biografia</h2>
-          <p>Conheça um pouco mais sobre a nossa Chloe.</p>
-        </div>
-        <div class="card-chevron">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#1a5ca3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </div>
-      </a>
-
-      <!-- Card Retrospectiva -->
-      <a href="./assets/pages/retrospectiva.html" class="menu-card card-yellow">
-        <div class="card-icon-wrapper">
-          <img src="assets/img/icon-retrospectiva.svg" alt="Retrospectiva" class="card-icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23d8a010\'><path d=\'M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z\'/></svg>'" />
-        </div>
-        <div class="card-text">
-          <h2>Retrospectiva</h2>
-          <p>Reviva os melhores momentos dessa linda jornada.</p>
-        </div>
-        <div class="card-chevron">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#1a5ca3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </div>
-      </a>
-
-      <!-- Card Galeria -->
-      <a href="./assets/pages/galeria.html" class="menu-card card-blue-light">
-        <div class="card-icon-wrapper">
-          <img src="assets/img/icon-galeria.svg" alt="Galeria" class="card-icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%231a5ca3\'><path d=\'M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4l2.03 2.71L16 11l4 5H9l2-3zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z\'/></svg>'" />
-        </div>
-        <div class="card-text">
-          <h2>Galeria</h2>
-          <p>Veja as fotos que contam sua história.</p>
-        </div>
-        <div class="card-chevron">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#1a5ca3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </div>
-      </a>
-
-      <!-- Card Mural de Recados -->
-      <a href="./assets/pages/mural.html" class="menu-card card-purple">
-        <div class="card-icon-wrapper">
-          <img src="assets/img/icon-mural.svg" alt="Mural" class="card-icon" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%236b52a1\'><path d=\'M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z\'/></svg>'" />
-        </div>
-        <div class="card-text">
-          <h2>Mural de Recados</h2>
-          <p>Deixe uma mensagem para a Chloe.</p>
-        </div>
-        <div class="card-chevron">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#1a5ca3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </div>
-      </a>
-
-    </nav>
-
-    <!-- Rodapé -->
-    <footer class="home-footer">
-      <p class="footer-quote">Sempre será nossa<br>pequena grande alegria.</p>
-      <div class="footer-doodles">
-        <span>☁️</span> <span>♡</span> <span>☁️</span>
-      </div>
-      <p class="lumora-brand-footer">
-        <span>Lumora</span> — Memorial Digital
-      </p>
-    </footer>
+    </section>
 
   </main>
 
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fredoka', sans-serif;
+}
+
+body {
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container que fixa o tamanho da tela do celular */
+.mobile-container {
+  width: 100%;
+  max-width: 430px;
+  background: #f3f0ff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding-bottom: 20px;
+}
+
+/* Section Hero: Container relativo que segura a imagem e a camada do botão */
+.hero-card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Imagem de referência que contém todo o topo, títulos e arte */
+.hero-bg-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Camada transparente para posicionar o botão exatamente onde você deseja */
+.hero-action-overlay {
+  position: absolute;
+  bottom: 25px; /* Ajuste essa distância para subir ou descer o botão */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Estilo do Botão */
+.btn-memorial {
+  background: linear-gradient(135deg, #b293f7, #8c67e8);
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.30rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(140, 103, 232, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-memorial:active {
+  transform: scale(0.96);
+}
+
+/* Seção Sobre / Card Inferior */
+.about-section {
+  padding: 15px 20px;
+}
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 20px rgba(140, 103, 232, 0.08);
+}
+
+.profile-avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.profile-avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.heart-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 2px 4px;
+  font-size: 0.75rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.small-tag {
+  color: #8c67e8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.profile-info h2 {
+  color: #553e99;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.profile-info p {
+  color: #7b7299;
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+.date-tag {
+  margin-top: 4px;
+  background-color: #eee9fd;
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.date-tag span {
+  color: #7d63cd;
+  font-size: 0.62rem;
+  font-weight: 600;
+}
